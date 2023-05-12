@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Exemples - Etiquettes de formulaire HTML</title>
+  </head>
+
+<body>
+
+    <!--Les boutons radio-->
+    <form>
+        <fieldset>
+            <legend>Taille du jus de fruits</legend>
+            <p> <input type="radio" name="size" id="size_1" value="small"> <label for="size_1">Petite</label> </p>
+            <p> <input type="radio" name="size" id="size_2" value="medium"> <label for="size_2">Moyenne</label> </p>
+            <p> <input type="radio" name="size" id="size_3" value="large"> <label for="size_3">Grande</label> </p>
+        </fieldset>
+    </form>
+
+    <!--Les cases à cocher-->
+    <form>
+        <p>
+        <label for="taste_1">J'aime les cerises</label>
+        <input type="checkbox" id="taste_1" name="taste_cherry" value="1">
+        </p>
+        <p>
+        <label for="taste_2">J'aime les bananes</label>
+        <input type="checkbox" id="taste_2" name="taste_banana" value="2">
+        </p>
+        </form>
+    
+    <!--Cas des étiquettes multiples, déconseillé-->
+
+    <p>Les champs obligatoires sont suivis de <abbr title="required">*</abbr>.</p>
+
+    <!-- Donc ceci&nbsp;: -->
+    
+    <form action="">
+    <div>
+    <label for="username">Nom&nbsp;:</label>
+    <input type="text" name="username">
+    <label for="username">
+    <abbr title="required">*</abbr></label>
+    </div>
+    
+    <!-- sera mieux programmé ainsi&nbsp;: -->
+    
+    <div>
+    <label for="username">
+    <span>Nom&nbsp;:</span>
+    <input id="username" type="text" name="username">
+    <abbr title="required">*</abbr>
+    </label>
+    </div>
+    
+    <!-- mais ceci est probablement encore meilleur&nbsp;: -->
+    
+    <div>
+    <label for="username">Nom&nbsp;:
+    <abbr title="required">*</abbr>
+    </label>
+    <input id="username" type="text" name="username">
+    </div>
+    </form>
+
+</body>
+
+</html>
